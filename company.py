@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import gdown
+
+
 # Download the dataset from Google Drive
 file_id = '1fC6ULmOHcKezv63dLHW0jqlOJh3FvbCM'
 url = f'https://drive.google.com/uc?export=download&id={file_id}'
@@ -320,7 +322,8 @@ with col14:
         plot_filtered_df14 = plot_filtered_df14[plot_filtered_df14['promotion'] == promotion_filter]
     
     promotion_sales = plot_filtered_df14.groupby('promotion')['total_sales'].mean().reset_index()
-    fig14 = px.pie(promotion_sales, values='total_sales', names='promotion', title="Average Sales with and without Promotions", labels={"promotion": "Promotion Applied (0 = No, 1 = Yes)", "total_sales": "Average Total Sales"}, hole=0.4, color_discrete_sequence=['#FF1493', '#00FA9A'])  # DeepPink, MediumSpringGreen
+    fig14 = px.pie(promotion_sales, values='total_sales', names='promotion', title="Average Sales with and without Promotions", labels={"promotion": "Promotion Applied ( No,  Yes)", "total_sales": "Average Total Sales"}, hole=0.4, color_discrete_sequence=['#FF1493', '#00FA9A'])  # DeepPink, MediumSpringGreen
+    fig14.update_traces(textinfo='percent+value')
     st.plotly_chart(fig14)
 
 with col15:
@@ -362,9 +365,3 @@ with col16:
                    labels={'x': 'Year', 'value': 'Total Sales', 'variable': 'Product'},
                    barmode='group')
     st.plotly_chart(fig16)
-
-
-
-
-
-
