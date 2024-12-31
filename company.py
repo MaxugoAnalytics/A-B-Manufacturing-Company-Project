@@ -16,7 +16,8 @@ st.sidebar.header('Filters')
 year_filter = st.sidebar.selectbox(
     'Select Year',
     options=['All'] + list(df['year'].unique()),
-    index=0  # Default to 'All')
+    index=0  # Default to 'All'
+)
 
 
 product_filter = st.sidebar.multiselect(
