@@ -16,14 +16,13 @@ st.sidebar.header('Filters')
 year_filter = st.sidebar.selectbox(
     'Select Year',
     options=['All'] + list(df['year'].unique()),
-    index=0  # Default to 'All'
-)
+    index=0  # Default to 'All')
 
-# Global Product Filter
+
 product_filter = st.sidebar.multiselect(
     'Select Product(s)',
     options=['All'] + list(df['product_name'].unique()),
-    default=['All']  # Default to all products selected)
+    default=['All'])
 
 filtered_df = df.copy()
 
@@ -184,10 +183,6 @@ with col4:
     fig.update_layout(legend_title="Sales Type", template='plotly_white', xaxis_title="Year", yaxis_title="Total Sales")
     st.plotly_chart(fig, height=100)
 
-# You would continue this pattern for all other `st.plotly_chart` calls
-
-
-# Second Row: Visualizations
 col5, col6, col7, col8 = st.columns(4)
 
 with col5:
