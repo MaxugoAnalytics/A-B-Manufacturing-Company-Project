@@ -1,4 +1,4 @@
-# Sales Analysis and Insights
+# A%B Manufacturing Company Sales Analysis and Insights
 
 ## Project Overview
 This project focuses on analyzing sales data to identify trends, correlations, and actionable insights for optimizing profitability. Key areas of focus include product seasonality, sales performance, pricing strategies, the impact of promotions and discounts, and weather's effect on sales.
